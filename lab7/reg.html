@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block container %}
+    <br/><br/><br/>
+    <div class="large-offset-3 large-6 colums">
+        <form action="/reg/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input class="button" type="submit" value="Зарегестрироваться">
+        </form>
+    </div>
+{% endblock %}

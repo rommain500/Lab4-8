@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block container %}
+    <br/><br/><br/>
+    <form action="/login/" method="post">
+        {% csrf_token %}
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="username">Имя пользователя</label>
+        <input type="text" name="username" id="username">
+        <label for="password">Пароль</label>
+        <input type="password" name="password" id="password">
+        {% if login_error %}
+            <label class="error">{{ login_error }}</label>
+        {% endif %}
+        <input class="button" type="submit">Sign in</input>
+    </form>
+{% endblock %}
